@@ -18,7 +18,7 @@ def homepage():
     # Get the dict representation of the response
     res = r.json()
 
-    return render_template('home.html', img=res['img'])
+    return render_template('home.html', img=res['url'])
 
 
 if __name__ == '__main__':
