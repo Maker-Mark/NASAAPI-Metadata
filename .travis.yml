@@ -10,5 +10,5 @@ install:
   - pip install -r requirements.txt
 before_script: cd app
 # command to run tests
-script:
-  - python app.py
+# script:
+#   - python app.py
