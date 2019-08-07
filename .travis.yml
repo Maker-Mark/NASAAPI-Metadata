@@ -13,10 +13,3 @@ before_install:
 - mkdir -p lib
 install:
 - pip install -r requirements.txt
-deploy:
-  provider: heroku
-  api_key:
-    secure: USd1OQelNMIo5BnLCJP6TytY9dN8Vepwsy6REQU38NT+TygO51kSzFOJ36KaR89hAc6Dw8ytIxQzS3f8fQ9sBSWgJyMivlSzhYszb75MIr5qwAFFP/HC/YdB1mi5bQ7NO9pbm91Dr3v4TNEni1YrKIsx1p4mlDEQwT3iNom4Bj4CBdCZ9pvg8Vl+VPGSbk1cZ6meFr7gB24SL0KiPJgKcZY90vpVHSWJ00WPLE11GmDock4LeuCa05j2QOHzqcDy5j0vGDgH/lOOEbX1v5lH2UpaSGVipzEyPghBGP1G6+XRtS7Hel8Cmc+AFtrZXaY/1dCEWEd22+VW/GRC6JfINFraty8+y6CimRfSfsx2bd9bu5U81j2e/du2tAuaiEQw+i3aDuRcPeMGLP0vvHExTjpyRfj70OBQMI0u3K1LzaSIAsAFEjvygU0z58KSSIlLizoqNrbc28vC+G0kzRCK4JztGL+kPx2githC0hY8bUFM9ZSa14f/8c0O5hHU8guxNmd7SvWpaDS34terRhYFGb9QB/kWHbpWf4acJjk256110njhZyaQXcA27z/Dl99jsR82mgkdn/J7a+lysebtg4Yoq8ZggV4Q1OLRw665+zTJh34RUBTYHnBol7Wq8Q24/9asidd/KQMR223k6l4BOYbFvkCyQkPMRalhGEAFy8I=
-  app: nasa-api-3140heroku
-  on:
-    repo: Maker-Mark/NASAAPI-Metadata
