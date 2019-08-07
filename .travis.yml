@@ -3,10 +3,13 @@ language: python
 sudo: required
 python: "3.7"
 install:
+        #- pip install -r requirements.txt
+before_script:
+- cd app
+- easy_install distribute
 - pip install -r requirements.txt
-before_script: cd app
 script:
-- python main.py
+- python test.py
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_38e8b7ab3d42_key -iv $encrypted_38e8b7ab3d42_iv
