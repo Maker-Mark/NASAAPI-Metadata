@@ -10,7 +10,6 @@ install:
 before_script: cd app
 script:
 - python main.py
-
 deploy:
   provider: gae
   skip_cleanup: true
@@ -19,3 +18,6 @@ deploy:
   default: true
   on:
     all_branches: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_38e8b7ab3d42_key -iv $encrypted_38e8b7ab3d42_iv
+  -in client-secret.json.enc -out client-secret.json -d
