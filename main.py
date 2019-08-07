@@ -1,48 +1,40 @@
-# '''
-# Metadata Exercise
-#     -Use an endpoint from api.nasa.gov
-#         --Goal: connect with the API using flask and display information
-#     -Extra feature: Include a textbox that takes in an api key and generates the POD
-#     -Extra extra feature: Include a textbox that lets you choose a date, then display's that day's picture
+# Full URL Call https://api.nasa.gov/planetary/apod?api_key=vZviPQHrjc3jDCPFQNvbWka45EEPIrRAgbepKmvZ
 
-# https://flask.palletsprojects.com/en/1.1.x/quickstart/
-# https: // realpython.com/flask-connexion-rest-api/
+from flask import Flask, render_template, request
+import requests
+import json
+
+app = Flask(__name__, template_folder='.')
 
 
-# Outline:
+@app.route('/', methods=['GET','POST'])
+def  homepage():
+    #If the method is POST
+    if(request.method ==  'POST'):
+        text = request.form['text'] #flask will send us a request obj, adn from the form we can fish out the text
+        r = requests.get(
+            'https://api.nasa.gov/planetary/apod?api_key=vZviPQHrjc3jDCPFQNvbWka45EEPIrRAgbepKmvZ&date='
+            + text)
+        # Get the dict representation of the response
+        res = r.json() # Decodes the response json to python dict
+        isImg = False
+        #If the date is an image
+        if(res['media_type'] == 'image'):
+            isImg = True
+        return render_template("/templates/home.html", url=res['url'], title=res['title'],
+         desc=res['explanation'], type=res['media_type'], isImg=isImg)
 
-# 1.Make flask server, get it running.
-# 2.Connect to the NASA api, test a response body
-#     -How do we render it in the browser?
-# 3.Make route that takes today's date and displays the img and title
-
-# '''
-# from flask import Flask,  # Import flask
-# # Create an instance of a Flask obj The first arg is the name of the app(single module use __name__, otherwise we need to specify, so that flask can find templates, static files, etc).
-# app = Flask(__name__)
-
-# # Use the route decorator to tell flask what URL should trigger this function
-# @app.route('/')
-# # We then define a function
-# def hello_world():
-#     return 'hello, world'
-
-# ## Let's build a url
-# '''
-# url_for() accepts the name of the function, and any number of keyword args. Unknown vars are appended as query params
-
-# '''
-
-# @app.route('/apic')
-# # We then define a function
-# def api_call():
-#     return 'hello, world'
-
+    #Otherwise it is a GET request
+    r = requests.get(
+        'https://api.nasa.gov/planetary/apod?api_key=vZviPQHrjc3jDCPFQNvbWka45EEPIrRAgbepKmvZ')
+    # Get the dict representation of the response
+    res = r.json()
+    print(type(res))
+    if(res['media_type'] == 'image'):
+        isImg = True
+    return render_template("/templates/home.html", url=res['url'], 
+    title=res['title'], desc=res['explanation'], isImg=isImg)
 
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         return "Logged in"
-#     else:
-#         return "logged out"
+if __name__ == '__main__':
+    app.run( debug=True)
