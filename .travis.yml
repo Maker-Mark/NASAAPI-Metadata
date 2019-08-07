@@ -1,30 +1,20 @@
 dist: xenial
 language: python
 sudo: required
-python: "3.7"
+python: '3.7'
 before_script:
-        #- cd app
+- cd app
 script:
-        #- python test.py
-
+- python test.py
 before_install:
-        - openssl aes-256-cbc -K $encrypted_38e8b7ab3d42_key -iv $encrypted_38e8b7ab3d42_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d
-        - tar -xzf credentials.tar.gz
-        - mkdir -p lib
-
+- openssl aes-256-cbc -K $encrypted_38e8b7ab3d42_key -iv $encrypted_38e8b7ab3d42_iv
+  -in credentials.tar.gz.enc -out credentials.tar.gz -d
+- tar -xzf credentials.tar.gz
+- mkdir -p lib
 install:
-        - pip install -r requirements.txt
-
-before_script:
-        - cd app        
-script:
-        - python test.py
-  
-
+- pip install -r requirements.txt
 deploy:
-        provider: gae
-        skip_cleanup: true # Skip cleanup so api_key.py and vendored dependencies are still there
-        keyfile: client-secret.json
-        project: nasa-api-249022
-        default: true  # default project app version
-
+  provider: heroku
+  api_key:
+    secure: kPVOquqUQA8TatMpK7M5rzedwnuXjqoZF+ORxBTtTJWJ8I7S0Su6o1PU9Y9J1BrwEcEyvDqKWgAoL/DBJ8atzvkZJuwsI7WlLdSJ4RKIq/2biNq95mI2NgvR1ANmJZIQWN5cyf/BkEltHNq06dw0EhYU16xyMXT8ER4PMS9fMHpoSqTsdXp9ugyYM/hN9tYjIbBoP1+IQFlVchSQHPURf2Dx0vDy1RfTqGC37TpSuQ5IZxJwtj8Teob9DKfDUt15BNMjH9MIWTh/pDot0fjuZes7LVDd2T+5AItyr56T5cTqkhMJ0ig3y/5WbOpzbgUAbP7lHiQltZ7npzsWk/bELBYQfqfXWyc5PgspPfhnoCysUT+MAWPvXq7W/IFLR0AHNv7HsoJ0q1BWoGi0m1S4dB4Fny/pmld3e5FKMuJA8YzwqTyh+MWVQjDSH26jyTJiBj31E6bglnxbJj0xTRqYp8m52BfxMoCHENiXKz/gvoCpRD6UE3sfFBHMEOa3xWW624eWljkpmMlL2RHb79v+cHtgO9fpWgIu1eIhgWKPG3pt3fyspWaD2FSFWh4DiMfX4RE7Bs90C3aQNZE5ASAZiruDHqP0Ii6HrGpQMxlUjZuVyZgpKu8+MfTu554+FpIYFrKXbZQgDFGlVjGh5nahcc8q8ZrtgJdNqDy+HG8nN/g=
+  secure: YOUR ENCRYPTED API KEY
