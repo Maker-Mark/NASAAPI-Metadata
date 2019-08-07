@@ -17,7 +17,7 @@ deploy:
   provider: heroku
   api_key:
     secure: CqRuvryPLlz2XwP9uezg4q4YRrkVxc+Lbg9qxHWkmPF8tomS3hB0sLmfXgvvuBz8vWrvu3quCTLlL+GeNsJJfzdF26mLObUJdranI783nPS4F1fBYI7MF2Nuv3sTPTr3pKINFU2xnLkcJCj0Razm65miP81uGDGla0YCevTcQvOXoPCOyf6noHWJskvnavpklK/BZrV/Co4aiNul2DkxjkYXAZvHBmFmyDrt3eDQ3Rg2INEZhAm+s7WkQ0PLMHMILGSwXsqX4sn/PpoqqAqtSrJBsnq/B0m+KOFvaTHbFK95+MrgDWjgK5en3OTbAWu4la8OV+KBK9V1+qmCdQ5Ftlx8CuA4+R0Krf4DhhUueAzW6Uvj3YrXJesBVNCbWLZ+Zk1mIjjkmuxVeVYRkqFtpiYRZ6U6IDk31HfIGeC8ahXFYRt/zWUDj4LHXeM8pKP50QHg6GlNjlAg2EFd5EBMsfmCmbsKPY01AxMrNOEjbQDHF1hZq7Jrrb5zY15ss+WiuFNKGxpHQLCyZEtne4hMHQvY3ed7Z+G/SZQ8Di/WJDkHNn0llAHYXNyDJojAcqt2XTHOqU1MjCvM6ipA2M7uuJZcq7ALttPcgXpU1+ZGrxeTt75WdbmMzHUxPwalWM1SDiiZGLFZzo8d41eW9MMSPGpo+qoY87XRQ9UTTrr6ubM=
-  app: NASAAPI-Metadata
+  app: nasaapi-metadata
   on:
     repo: Maker-Mark/NASAAPI-Metadata
     branch: travisci
