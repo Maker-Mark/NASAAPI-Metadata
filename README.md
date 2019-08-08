@@ -1,5 +1,6 @@
 # Setup
-
+- Option one: Deployed on Heroku with continuios integration here: https://nasaapi-metadata.herokuapp.com
+- Option two: Local machine
 If you're using a virtual environment, activate it and install the dependencies via a `pip install -r requirements.txt`.
 Note: You may need to try `pip3 install -r requirements.txt`
 
