@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Maker-Mark/NASAAPI-Metadata.svg?branch=master)](https://travis-ci.org/Maker-Mark/NASAAPI-Metadata)
 # Setup
 - Option one: Deployed on Heroku with continuios integration here: https://nasaapi-metadata.herokuapp.com
 - Option two: Local machine
