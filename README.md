@@ -34,7 +34,7 @@ script:
   - As you can see, getting started with Trivis is not too bad, and gives you a easy, recorded way of seeing what code builds.
 ### Deploying
   - Deploying a flask application is not too bad, there are a few platforms, heroku, netlify, python anywhere and google app engine (to mention a few)
-  - For example, you can acheeive a successful deploy with just an addition of the deploy clause in the `.travis.yaml`
+  - For example, you can acheive a successful deploy with just an addition of the deploy clause in the `.travis.yml`
  file.
  ```
  deploy:
@@ -45,8 +45,14 @@ script:
   on:
     repo: Maker-Mark/NASAAPI-Metadata
  ```
- 
  ### Continuoius Integration and Deployment
-  - Okay, so we can test builds, see what passes and fails, but what about 
+  - As long as you configure your `.travis.yaml` correctly, you should be up and running!
+  - Just enable automatic deploys and set the continious integration check to true.
+  [Imgur](https://imgur.com/XLdxumu)
  
-This assignment was particularly challenging as the different tools require significant research to get basic examples going. It took me 4 different deploys and platforms to get somewhere, and I'm glad I did. I feel like I have gotten 100 times better at VIM and see the necessity for learning server-management command line tools, as well as the security vulnerabilities that are at stake 
+# Congraduations! 
+  - Your Flask App is now building from the .travis.yml and auto-deploying.
+  - A trvis build will happen anytime the trigger goes off (ie a push to the selected branch)
+    - Once a travis test passes, Heroku will automatically deploy, thanks to that .travis.yml deploy clause!
+ ## Final Thoughts   
+This excersise  was particularly challenging as the different tools require significant research to get basic examples going. It took me 4 different deploys and platforms to get somewhere, and I'm glad I did. I feel like I have gotten 100 times better at VIM and see the necessity for learning server-management command line tools, as well as the security vulnerabilities that are at stake .
