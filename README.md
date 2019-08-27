@@ -10,7 +10,6 @@ Note: You may need to try `pip3 install -r requirements.txt`
 Simply navigate to the app folder with a `cd app` and run the app via `python app.py` or `python3 app.py`
 The application should be running at `http://127.0.0.0:5000/` or `localhost:5000`
 
-
 ## Setting up Continious Integration with Travis CI
 - The main challenge of acheiving this was configuring a `.travis.yml` in  the current github repository
   - The `.travis.yml` allows us to specify install instructions, as well as script instructions.
